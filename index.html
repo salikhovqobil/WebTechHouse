@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title.home">Tech House - Maishiy texnika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-page="home" data-base="" data-page-root="pages/">
+    <a class="skip-link" href="#main" data-i18n="skip.link">Asosiy qismga otish</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <a class="logo" href="index.html">
+                    <img class="logo-mark" src="assets/img/logo/techhouse-logo.svg" alt="" aria-hidden="true">
+                    <span>Tech House</span>
+                </a>
+                <form class="search-bar" role="search" action="pages/categories.html" method="get" data-search-form>
+                    <label class="sr-only" for="searchInput" data-i18n="search.label">Mahsulot qidirish</label>
+                    <input type="search" id="searchInput" name="q" placeholder="Mahsulot qidirish..." autocomplete="off" data-i18n-placeholder="search.placeholder">
+                    <button type="submit">
+                        <img class="icon" src="assets/img/icons/search.svg" alt="" aria-hidden="true">
+                        <span data-i18n="search.button">Qidirish</span>
+                    </button>
+                </form>
+                <div class="header-actions">
+                    <div class="lang-switch" role="group" data-i18n-aria="lang.switcher">
+                        <button type="button" class="lang-btn" data-lang="uz">UZ</button>
+                        <button type="button" class="lang-btn" data-lang="ru">RU</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <a href="pages/contact.html" class="icon-link">
+                        <img class="icon" src="assets/img/icons/phone.svg" alt="" aria-hidden="true">
+                        <span data-i18n="nav.contact">Kontakt</span>
+                    </a>
+                    <a href="pages/cart.html" class="cart-link">
+                        <img class="icon" src="assets/img/icons/cart.svg" alt="" aria-hidden="true">
+                        <span data-i18n="nav.cart">Savatcha</span> <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active" data-i18n="nav.home">Bosh sahifa</a></li>
+                <li><a href="pages/categories.html?cat=Kitchen" data-i18n="nav.kitchen">Oshxona</a></li>
+                <li><a href="pages/categories.html?cat=Cleaning" data-i18n="nav.cleaning">Tozalash</a></li>
+                <li><a href="pages/categories.html?cat=Climate" data-i18n="nav.climate">Iqlim</a></li>
+                <li><a href="pages/categories.html?cat=TV" data-i18n="nav.tv">TV &amp; Audio</a></li>
+                <li><a href="pages/categories.html?cat=Computers" data-i18n="nav.computers">Kompyuter</a></li>
+                <li><a href="pages/categories.html?cat=Appliances" data-i18n="nav.appliances">Kichik qurilmalar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="main-content">
+        <section class="hero-banner reveal">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow" data-i18n="home.hero.eyebrow">Tech House</p>
+                    <h1 data-i18n="home.hero.title">Uy uchun aqlli va ishonchli texnika</h1>
+                    <p data-i18n="home.hero.subtitle">Texnomartning promos uslubi va MediaParkning soddaligi asosida yaratilgan ecommerce prototipi.</p>
+                    <div class="hero-actions">
+                        <a href="pages/categories.html" class="btn btn-primary" data-i18n="buttons.viewCatalog">Katalogni korish</a>
+                        <a href="pages/contact.html" class="btn btn-outline" data-i18n="buttons.getAdvice">Maslahat olish</a>
+                    </div>
+                    <div class="hero-metrics">
+                        <div>
+                            <p class="metric-value">20+ </p>
+                            <p class="metric-label" data-i18n="home.hero.metricProducts">Mahsulotlar</p>
+                        </div>
+                        <div>
+                            <p class="metric-value">6</p>
+                            <p class="metric-label" data-i18n="home.hero.metricCategories">Kategoriya</p>
+                        </div>
+                        <div>
+                            <p class="metric-value">24/7</p>
+                            <p class="metric-label" data-i18n="home.hero.metricSupport">Yordam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img class="hero-image" src="assets/img/banners/hero-showcase.svg" alt="Tech House mahsulotlari kollaji" data-i18n-alt="home.hero.imageAlt">
+                    <div class="hero-card">
+                        <p class="hero-card-title" data-i18n="home.hero.cardWeekly">Haftalik taklif</p>
+                        <h3>Kitchen Pro Blender</h3>
+                        <p class="price">1 499 000 so'm</p>
+                        <a href="pages/product.html?id=101" class="btn btn-ghost" data-i18n="buttons.details">Batafsil</a>
+                    </div>
+                    <div class="hero-card secondary">
+                        <p class="hero-card-title" data-i18n="home.hero.cardNew">Yangi kelgan</p>
+                        <h3>VisionX 55" 4K TV</h3>
+                        <p class="price">6 950 000 so'm</p>
+                        <a href="pages/product.html?id=113" class="btn btn-ghost" data-i18n="buttons.details">Batafsil</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories-section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="home.categories.title">Kategoriyalar</h2>
+                    <p data-i18n="home.categories.subtitle">Eng kop talab qilinadigan bolimlar</p>
+                </div>
+                <div class="categories-grid">
+                    <a class="category-card" href="pages/categories.html?cat=Kitchen">
+                        <div class="category-icon">
+                            <img class="icon-lg" src="assets/img/icons/kitchen.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-i18n="category.Kitchen">Oshxona</h3>
+                        <p data-i18n="home.categories.kitchenDesc">Blender, mixer, pechlar</p>
+                    </a>
+                    <a class="category-card" href="pages/categories.html?cat=Cleaning">
+                        <div class="category-icon">
+                            <img class="icon-lg" src="assets/img/icons/cleaning.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-i18n="category.Cleaning">Tozalash</h3>
+                        <p data-i18n="home.categories.cleaningDesc">Robot changyutgich, kir yuvish</p>
+                    </a>
+                    <a class="category-card" href="pages/categories.html?cat=Climate">
+                        <div class="category-icon">
+                            <img class="icon-lg" src="assets/img/icons/climate.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-i18n="category.Climate">Iqlim</h3>
+                        <p data-i18n="home.categories.climateDesc">Konditsioner, havo tozalash</p>
+                    </a>
+                    <a class="category-card" href="pages/categories.html?cat=TV">
+                        <div class="category-icon">
+                            <img class="icon-lg" src="assets/img/icons/tv.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-i18n="category.TV">TV &amp; Audio</h3>
+                        <p data-i18n="home.categories.tvDesc">Smart TV va audio tizimlar</p>
+                    </a>
+                    <a class="category-card" href="pages/categories.html?cat=Computers">
+                        <div class="category-icon">
+                            <img class="icon-lg" src="assets/img/icons/computer.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-i18n="category.Computers">Kompyuter</h3>
+                        <p data-i18n="home.categories.computersDesc">Notebook, monitor, router</p>
+                    </a>
+                    <a class="category-card" href="pages/categories.html?cat=Appliances">
+                        <div class="category-icon">
+                            <img class="icon-lg" src="assets/img/icons/appliances.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-i18n="category.Appliances">Kichik qurilmalar</h3>
+                        <p data-i18n="home.categories.appliancesDesc">Choynak, fen, dazmol</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="home.featured.title">Tavsiya etilgan mahsulotlar</h2>
+                    <p data-i18n="home.featured.subtitle">Ommabop modellardan tanlangan toplam</p>
+                </div>
+                <div id="productGrid" class="products-grid"></div>
+            </div>
+        </section>
+
+        <section class="promo-grid reveal">
+            <div class="container">
+                <div class="promo-card">
+                    <div class="promo-content">
+                        <p class="eyebrow" data-i18n="home.promo.promoEyebrow">Promo</p>
+                        <h3 data-i18n="home.promo.discountTitle">Haftalik chegirma 15%</h3>
+                        <p data-i18n="home.promo.discountText">Tanlangan kichik qurilmalar uchun amal qiladi.</p>
+                        <a href="pages/categories.html?cat=Appliances" class="btn btn-outline" data-i18n="buttons.choose">Tanlash</a>
+                    </div>
+                    <img class="promo-media" src="assets/img/banners/promo-appliances.svg" alt="Kichik qurilmalar promo banneri">
+                </div>
+                <div class="promo-card alt">
+                    <div class="promo-content">
+                        <p class="eyebrow" data-i18n="home.promo.deliveryEyebrow">Dostavka</p>
+                        <h3 data-i18n="home.promo.deliveryTitle">1 kun ichida yetkazib berish</h3>
+                        <p data-i18n="home.promo.deliveryText">Toshkent shahri boylab bepul yetkazib berish.</p>
+                        <a href="pages/contact.html" class="btn btn-outline" data-i18n="buttons.contact">Boglanish</a>
+                    </div>
+                    <img class="promo-media" src="assets/img/banners/promo-delivery.svg" alt="Yetkazib berish promo banneri">
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="home.benefits.title">Bizning afzalliklarimiz</h2>
+                    <p data-i18n="home.benefits.subtitle">Sotib olish jarayoni qulay va ishonchli</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <img class="benefit-icon" src="assets/img/icons/delivery.svg" alt="" aria-hidden="true">
+                        <h3 data-i18n="home.benefits.deliveryTitle">Bepul yetkazib berish</h3>
+                        <p data-i18n="home.benefits.deliveryText">100 000 so'mdan boshlab shaharda bepul.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img class="benefit-icon" src="assets/img/icons/return.svg" alt="" aria-hidden="true">
+                        <h3 data-i18n="home.benefits.returnsTitle">30 kun qaytarish</h3>
+                        <p data-i18n="home.benefits.returnsText">Muammosiz qaytarish siyosati.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img class="benefit-icon" src="assets/img/icons/warranty.svg" alt="" aria-hidden="true">
+                        <h3 data-i18n="home.benefits.warrantyTitle">Rasmiy kafolat</h3>
+                        <p data-i18n="home.benefits.warrantyText">2 yilgacha kafolat xizmatlari.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img class="benefit-icon" src="assets/img/icons/support.svg" alt="" aria-hidden="true">
+                        <h3 data-i18n="home.benefits.supportTitle">24/7 yordam</h3>
+                        <p data-i18n="home.benefits.supportText">Mutaxassislar bilan chat va qo'ngiroq.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h4>Tech House</h4>
+                <p data-i18n="footer.tagline">Maishiy texnika sotuvining ishonchli manbai.</p>
+            </div>
+            <div>
+                <h5 data-i18n="footer.links">Havolalar</h5>
+                <ul>
+                    <li><a href="pages/contact.html" data-i18n="footer.about">Biz haqimizda</a></li>
+                    <li><a href="pages/contact.html" data-i18n="footer.contacts">Kontaktlar</a></li>
+                    <li><a href="#" data-i18n="footer.returns">Qaytarish siyosati</a></li>
+                    <li><a href="#" data-i18n="footer.privacy">Maxfiylik</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 data-i18n="footer.social">Ijtimoiy tarmoqlar</h5>
+                <ul>
+                    <li><a href="#"><img class="icon" src="assets/img/icons/facebook.svg" alt="" aria-hidden="true">Facebook</a></li>
+                    <li><a href="#"><img class="icon" src="assets/img/icons/instagram.svg" alt="" aria-hidden="true">Instagram</a></li>
+                    <li><a href="#"><img class="icon" src="assets/img/icons/telegram.svg" alt="" aria-hidden="true">Telegram</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 data-i18n="footer.contactHeading">Boglanish</h5>
+                <p><img class="icon" src="assets/img/icons/phone.svg" alt="" aria-hidden="true"><span data-i18n="footer.phoneLabel">Telefon:</span> +998 71 123 45 67</p>
+                <p><img class="icon" src="assets/img/icons/mail.svg" alt="" aria-hidden="true"><span data-i18n="footer.emailLabel">Email:</span> info@techhouse.uz</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n-html="footer.rightsHtml">&copy; 2026 Tech House. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
+    
+    

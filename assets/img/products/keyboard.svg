@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+    <defs>
+        <linearGradient id="bg-keyboard" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fef3c7" />
+            <stop offset="100%" stop-color="#e0f2f1" />
+        </linearGradient>
+    </defs>
+    <rect width="640" height="480" rx="28" fill="url(#bg-keyboard)" />
+    <rect x="100" y="150" width="440" height="180" rx="20" fill="#ffffff" opacity="0.9" />
+    <rect x="140" y="190" width="60" height="40" rx="8" stroke="#0f766e" stroke-width="3" />
+    <rect x="210" y="190" width="60" height="40" rx="8" stroke="#0f766e" stroke-width="3" />
+    <rect x="280" y="190" width="60" height="40" rx="8" stroke="#0f766e" stroke-width="3" />
+    <rect x="350" y="190" width="60" height="40" rx="8" stroke="#0f766e" stroke-width="3" />
+    <rect x="420" y="190" width="60" height="40" rx="8" stroke="#0f766e" stroke-width="3" />
+    <rect x="170" y="250" width="300" height="40" rx="10" fill="#f97316" opacity="0.4" />
+    <text x="50%" y="78%" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5f5a52">Keyboard</text>
+</svg>

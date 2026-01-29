@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title.contact">Kontakt - Tech House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body data-page="contact" data-base="../" data-page-root="">
+    <a class="skip-link" href="#main" data-i18n="skip.link">Asosiy qismga otish</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <a class="logo" href="../index.html">
+                    <img class="logo-mark" src="../assets/img/logo/techhouse-logo.svg" alt="" aria-hidden="true">
+                    <span>Tech House</span>
+                </a>
+                <form class="search-bar" role="search" action="categories.html" method="get" data-search-form>
+                    <label class="sr-only" for="searchInput" data-i18n="search.label">Mahsulot qidirish</label>
+                    <input type="search" id="searchInput" name="q" placeholder="Mahsulot qidirish..." autocomplete="off" data-i18n-placeholder="search.placeholder">
+                    <button type="submit">
+                        <img class="icon" src="../assets/img/icons/search.svg" alt="" aria-hidden="true">
+                        <span data-i18n="search.button">Qidirish</span>
+                    </button>
+                </form>
+                <div class="header-actions">
+                    <div class="lang-switch" role="group" data-i18n-aria="lang.switcher">
+                        <button type="button" class="lang-btn" data-lang="uz">UZ</button>
+                        <button type="button" class="lang-btn" data-lang="ru">RU</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <a href="contact.html" class="icon-link">
+                        <img class="icon" src="../assets/img/icons/phone.svg" alt="" aria-hidden="true">
+                        <span data-i18n="nav.contact">Kontakt</span>
+                    </a>
+                    <a href="cart.html" class="cart-link">
+                        <img class="icon" src="../assets/img/icons/cart.svg" alt="" aria-hidden="true">
+                        <span data-i18n="nav.cart">Savatcha</span> <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="../index.html" data-i18n="nav.home">Bosh sahifa</a></li>
+                <li><a href="categories.html?cat=Kitchen" data-i18n="nav.kitchen">Oshxona</a></li>
+                <li><a href="categories.html?cat=Cleaning" data-i18n="nav.cleaning">Tozalash</a></li>
+                <li><a href="categories.html?cat=Climate" data-i18n="nav.climate">Iqlim</a></li>
+                <li><a href="categories.html?cat=TV" data-i18n="nav.tv">TV &amp; Audio</a></li>
+                <li><a href="categories.html?cat=Computers" data-i18n="nav.computers">Kompyuter</a></li>
+                <li><a href="categories.html?cat=Appliances" data-i18n="nav.appliances">Kichik qurilmalar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="main-content">
+        <section class="page-hero reveal">
+            <div class="container">
+                <p class="eyebrow" data-i18n="contact.hero.eyebrow">Kontakt</p>
+                <h1 data-i18n="contact.hero.title">Biz bilan boglaning</h1>
+                <p data-i18n="contact.hero.subtitle">Operatorlar 24/7 yordam beradi. Savolingizni yuboring.</p>
+            </div>
+        </section>
+
+        <section class="contact-cards reveal">
+            <div class="container contact-grid">
+                <div class="contact-card">
+                    <img class="contact-icon" src="../assets/img/icons/phone.svg" alt="" aria-hidden="true">
+                    <h3 data-i18n="contact.cards.phoneTitle">Telefon</h3>
+                    <p>+998 71 123 45 67</p>
+                    <p class="muted" data-i18n="contact.cards.phoneTime">Har kuni 09:00 - 22:00</p>
+                </div>
+                <div class="contact-card">
+                    <img class="contact-icon" src="../assets/img/icons/mail.svg" alt="" aria-hidden="true">
+                    <h3 data-i18n="contact.cards.emailTitle">Email</h3>
+                    <p>info@techhouse.uz</p>
+                    <p class="muted" data-i18n="contact.cards.emailTime">24 soat ichida javob</p>
+                </div>
+                <div class="contact-card">
+                    <img class="contact-icon" src="../assets/img/icons/location.svg" alt="" aria-hidden="true">
+                    <h3 data-i18n="contact.cards.addressTitle">Manzil</h3>
+                    <p data-i18n="contact.cards.addressLine">Toshkent, Amir Temur 10</p>
+                    <p class="muted" data-i18n="contact.cards.addressNote">Showroom va pickup nuqtasi</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container contact-layout">
+                <form class="contact-form" aria-label="Kontakt formasi" data-i18n-aria="contact.form.aria">
+                    <h2 data-i18n="contact.form.title">Xabar yuborish</h2>
+                    <div class="form-field">
+                        <label for="contactName" data-i18n="contact.form.name">Ism</label>
+                        <input type="text" id="contactName" placeholder="Ismingiz" data-i18n-placeholder="contact.form.namePlaceholder">
+                    </div>
+                    <div class="form-field">
+                        <label for="contactEmail" data-i18n="contact.form.email">Email</label>
+                        <input type="email" id="contactEmail" placeholder="you@example.com" data-i18n-placeholder="contact.form.emailPlaceholder">
+                    </div>
+                    <div class="form-field">
+                        <label for="contactMessage" data-i18n="contact.form.message">Xabar</label>
+                        <textarea id="contactMessage" rows="4" placeholder="Savolingizni yozing" data-i18n-placeholder="contact.form.messagePlaceholder"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit" data-i18n="buttons.send">Yuborish</button>
+                    <p class="muted" data-i18n="contact.form.note">Forma prototip uchun. Javob avtomatik emas.</p>
+                </form>
+                <div class="map-placeholder" aria-label="Xarita joyi" data-i18n-aria="contact.map.aria">
+                    <img src="../assets/img/banners/map-placeholder.svg" alt="Xarita joyi uchun namunaviy rasm" data-i18n-alt="contact.map.alt">
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="contact.faq.title">FAQ</h2>
+                    <p data-i18n="contact.faq.subtitle">Eng kop soraladigan savollar</p>
+                </div>
+                <div class="faq-list">
+                    <details>
+                        <summary data-i18n="contact.faq.q1">Yetkazib berish muddati qancha?</summary>
+                        <p data-i18n="contact.faq.a1">Toshkent bo yicha 1 kun, viloyatlar uchun 2-3 kun.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="contact.faq.q2">Kafolat shartlari qanday?</summary>
+                        <p data-i18n="contact.faq.a2">Har bir mahsulot uchun 12-24 oy rasmiy kafolat mavjud.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="contact.faq.q3">Qaytarish siyosati bormi?</summary>
+                        <p data-i18n="contact.faq.a3">30 kun ichida mahsulotni qaytarish imkoniyati bor.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h4>Tech House</h4>
+                <p data-i18n="footer.tagline">Maishiy texnika sotuvining ishonchli manbai.</p>
+            </div>
+            <div>
+                <h5 data-i18n="footer.links">Havolalar</h5>
+                <ul>
+                    <li><a href="contact.html" data-i18n="footer.about">Biz haqimizda</a></li>
+                    <li><a href="contact.html" data-i18n="footer.contacts">Kontaktlar</a></li>
+                    <li><a href="#" data-i18n="footer.returns">Qaytarish siyosati</a></li>
+                    <li><a href="#" data-i18n="footer.privacy">Maxfiylik</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 data-i18n="footer.social">Ijtimoiy tarmoqlar</h5>
+                <ul>
+                    <li><a href="#"><img class="icon" src="../assets/img/icons/facebook.svg" alt="" aria-hidden="true">Facebook</a></li>
+                    <li><a href="#"><img class="icon" src="../assets/img/icons/instagram.svg" alt="" aria-hidden="true">Instagram</a></li>
+                    <li><a href="#"><img class="icon" src="../assets/img/icons/telegram.svg" alt="" aria-hidden="true">Telegram</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 data-i18n="footer.contactHeading">Boglanish</h5>
+                <p><img class="icon" src="../assets/img/icons/phone.svg" alt="" aria-hidden="true"><span data-i18n="footer.phoneLabel">Telefon:</span> +998 71 123 45 67</p>
+                <p><img class="icon" src="../assets/img/icons/mail.svg" alt="" aria-hidden="true"><span data-i18n="footer.emailLabel">Email:</span> info@techhouse.uz</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n-html="footer.rightsHtml">&copy; 2026 Tech House. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../assets/js/app.js"></script>
+</body>
+</html>

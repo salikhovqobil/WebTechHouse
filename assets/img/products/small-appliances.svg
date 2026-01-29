@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+    <defs>
+        <linearGradient id="bg-small" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fef3c7" />
+            <stop offset="100%" stop-color="#fff7e6" />
+        </linearGradient>
+    </defs>
+    <rect width="640" height="480" rx="28" fill="url(#bg-small)" />
+    <rect x="200" y="140" width="240" height="220" rx="20" fill="#ffffff" opacity="0.9" />
+    <rect x="260" y="110" width="120" height="50" rx="10" stroke="#0f766e" stroke-width="4" />
+    <rect x="240" y="330" width="160" height="18" rx="9" fill="#0f766e" opacity="0.7" />
+    <circle cx="320" cy="250" r="28" fill="#f97316" opacity="0.4" />
+    <text x="50%" y="78%" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5f5a52">Small Appliances</text>
+</svg>

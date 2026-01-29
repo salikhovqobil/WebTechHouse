@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+    <defs>
+        <linearGradient id="bg-mouse" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e0f2f1" />
+            <stop offset="100%" stop-color="#fff7e6" />
+        </linearGradient>
+    </defs>
+    <rect width="640" height="480" rx="28" fill="url(#bg-mouse)" />
+    <rect x="170" y="80" width="300" height="320" rx="150" fill="#ffffff" opacity="0.9" />
+    <path d="M320 120 V220" stroke="#0f766e" stroke-width="6" stroke-linecap="round" />
+    <circle cx="320" cy="170" r="10" fill="#0f766e" opacity="0.35" />
+    <path d="M170 240 H470" stroke="#f97316" stroke-width="4" opacity="0.5" />
+    <text x="50%" y="78%" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5f5a52">Mouse</text>
+</svg>
+                

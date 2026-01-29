@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title.checkout">Checkout - Tech House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body data-page="checkout" data-base="../" data-page-root="">
+    <a class="skip-link" href="#main" data-i18n="skip.link">Asosiy qismga otish</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <a class="logo" href="../index.html">
+                    <img class="logo-mark" src="../assets/img/logo/techhouse-logo.svg" alt="" aria-hidden="true">
+                    <span>Tech House</span>
+                </a>
+                <form class="search-bar" role="search" action="categories.html" method="get" data-search-form>
+                    <label class="sr-only" for="searchInput" data-i18n="search.label">Mahsulot qidirish</label>
+                    <input type="search" id="searchInput" name="q" placeholder="Mahsulot qidirish..." autocomplete="off" data-i18n-placeholder="search.placeholder">
+                    <button type="submit">
+                        <img class="icon" src="../assets/img/icons/search.svg" alt="" aria-hidden="true">
+                        <span data-i18n="search.button">Qidirish</span>
+                    </button>
+                </form>
+                <div class="header-actions">
+                    <div class="lang-switch" role="group" data-i18n-aria="lang.switcher">
+                        <button type="button" class="lang-btn" data-lang="uz">UZ</button>
+                        <button type="button" class="lang-btn" data-lang="ru">RU</button>
+                        <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <a href="contact.html" class="icon-link">
+                        <img class="icon" src="../assets/img/icons/phone.svg" alt="" aria-hidden="true">
+                        <span data-i18n="nav.contact">Kontakt</span>
+                    </a>
+                    <a href="cart.html" class="cart-link">
+                        <img class="icon" src="../assets/img/icons/cart.svg" alt="" aria-hidden="true">
+                        <span data-i18n="nav.cart">Savatcha</span> <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="../index.html" data-i18n="nav.home">Bosh sahifa</a></li>
+                <li><a href="categories.html?cat=Kitchen" data-i18n="nav.kitchen">Oshxona</a></li>
+                <li><a href="categories.html?cat=Cleaning" data-i18n="nav.cleaning">Tozalash</a></li>
+                <li><a href="categories.html?cat=Climate" data-i18n="nav.climate">Iqlim</a></li>
+                <li><a href="categories.html?cat=TV" data-i18n="nav.tv">TV &amp; Audio</a></li>
+                <li><a href="categories.html?cat=Computers" data-i18n="nav.computers">Kompyuter</a></li>
+                <li><a href="categories.html?cat=Appliances" data-i18n="nav.appliances">Kichik qurilmalar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main" class="main-content">
+        <section class="page-hero reveal">
+            <div class="container">
+                <p class="eyebrow" data-i18n="checkout.hero.eyebrow">Checkout</p>
+                <h1 data-i18n="checkout.hero.title">Buyurtmani rasmiylashtirish</h1>
+                <p data-i18n="checkout.hero.subtitle">Kontakt malumotlarini toldiring va buyurtmani yuboring.</p>
+            </div>
+        </section>
+
+        <section class="checkout-section">
+            <div class="container checkout-layout">
+                <form id="checkoutForm" class="checkout-form" novalidate>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="fullName" data-i18n="checkout.form.fullName">Ism va familiya</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Ism Familiya" required data-i18n-placeholder="checkout.form.fullNamePlaceholder">
+                            <small class="form-error" data-error-for="fullName"></small>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone" data-i18n="checkout.form.phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+998 90 123 45 67" required data-i18n-placeholder="checkout.form.phonePlaceholder">
+                            <small class="form-error" data-error-for="phone"></small>
+                        </div>
+                        <div class="form-field">
+                            <label for="email" data-i18n="checkout.form.email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required data-i18n-placeholder="checkout.form.emailPlaceholder">
+                            <small class="form-error" data-error-for="email"></small>
+                        </div>
+                        <div class="form-field">
+                            <label for="city" data-i18n="checkout.form.city">Shahar</label>
+                            <input type="text" id="city" name="city" placeholder="Toshkent" required data-i18n-placeholder="checkout.form.cityPlaceholder">
+                            <small class="form-error" data-error-for="city"></small>
+                        </div>
+                        <div class="form-field full">
+                            <label for="address" data-i18n="checkout.form.address">Manzil</label>
+                            <input type="text" id="address" name="address" placeholder="Kocha, uy, xonadon" required data-i18n-placeholder="checkout.form.addressPlaceholder">
+                            <small class="form-error" data-error-for="address"></small>
+                        </div>
+                        <div class="form-field full">
+                            <label for="payment" data-i18n="checkout.form.payment">Tolov usuli</label>
+                            <select id="payment" name="payment" required>
+                                <option value="" data-i18n="checkout.form.paymentPlaceholder">Tanlang</option>
+                                <option value="card" data-i18n="checkout.form.payment.card">Karta</option>
+                                <option value="cash" data-i18n="checkout.form.payment.cash">Naqd pul</option>
+                                <option value="installment" data-i18n="checkout.form.payment.installment">Muddatli tolov</option>
+                            </select>
+                            <small class="form-error" data-error-for="payment"></small>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <label class="checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <span data-i18n="checkout.form.terms">Yetkazib berish shartlariga roziman</span>
+                        </label>
+                        <small class="form-error" data-error-for="terms"></small>
+                        <button type="submit" class="btn btn-primary" data-i18n="buttons.submitOrder">Buyurtma berish</button>
+                        <p id="formStatus" class="form-status" aria-live="polite"></p>
+                    </div>
+                </form>
+
+                <aside class="order-summary">
+                    <h3 data-i18n="checkout.summary.title">Buyurtma xulosasi</h3>
+                    <div class="summary-line">
+                        <span data-i18n="checkout.summary.subtotal">Subtotal</span>
+                        <span id="summarySubtotal">0 so'm</span>
+                    </div>
+                    <div class="summary-line">
+                        <span data-i18n="checkout.summary.shipping">Yetkazib berish</span>
+                        <span id="summaryShipping">0 so'm</span>
+                    </div>
+                    <div class="summary-line">
+                        <span data-i18n="checkout.summary.discount">Chegirma</span>
+                        <span id="summaryDiscount">0 so'm</span>
+                    </div>
+                    <div class="summary-line total">
+                        <span data-i18n="checkout.summary.total">Jami</span>
+                        <span id="summaryTotal">0 so'm</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h4>Tech House</h4>
+                <p data-i18n="footer.tagline">Maishiy texnika sotuvining ishonchli manbai.</p>
+            </div>
+            <div>
+                <h5 data-i18n="footer.links">Havolalar</h5>
+                <ul>
+                    <li><a href="contact.html" data-i18n="footer.about">Biz haqimizda</a></li>
+                    <li><a href="contact.html" data-i18n="footer.contacts">Kontaktlar</a></li>
+                    <li><a href="#" data-i18n="footer.returns">Qaytarish siyosati</a></li>
+                    <li><a href="#" data-i18n="footer.privacy">Maxfiylik</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 data-i18n="footer.social">Ijtimoiy tarmoqlar</h5>
+                <ul>
+                    <li><a href="#"><img class="icon" src="../assets/img/icons/facebook.svg" alt="" aria-hidden="true">Facebook</a></li>
+                    <li><a href="#"><img class="icon" src="../assets/img/icons/instagram.svg" alt="" aria-hidden="true">Instagram</a></li>
+                    <li><a href="#"><img class="icon" src="../assets/img/icons/telegram.svg" alt="" aria-hidden="true">Telegram</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 data-i18n="footer.contactHeading">Boglanish</h5>
+                <p><img class="icon" src="../assets/img/icons/phone.svg" alt="" aria-hidden="true"><span data-i18n="footer.phoneLabel">Telefon:</span> +998 71 123 45 67</p>
+                <p><img class="icon" src="../assets/img/icons/mail.svg" alt="" aria-hidden="true"><span data-i18n="footer.emailLabel">Email:</span> info@techhouse.uz</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n-html="footer.rightsHtml">&copy; 2026 Tech House. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../assets/js/app.js"></script>
+</body>
+</html>

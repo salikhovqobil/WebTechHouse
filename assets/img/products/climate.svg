@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none">
+    <defs>
+        <linearGradient id="bg-climate" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fef3c7" />
+            <stop offset="100%" stop-color="#d1fae5" />
+        </linearGradient>
+    </defs>
+    <rect width="640" height="480" rx="28" fill="url(#bg-climate)" />
+    <rect x="140" y="150" width="360" height="180" rx="20" fill="#ffffff" opacity="0.9" />
+    <path d="M200 210 C220 190 260 190 280 210" stroke="#0f766e" stroke-width="4" stroke-linecap="round" />
+    <path d="M320 210 C340 190 380 190 400 210" stroke="#0f766e" stroke-width="4" stroke-linecap="round" />
+    <path d="M230 250 C250 230 290 230 310 250" stroke="#f97316" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+    <path d="M350 250 C370 230 410 230 430 250" stroke="#f97316" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+    <text x="50%" y="78%" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5f5a52">Climate</text>
+</svg>
