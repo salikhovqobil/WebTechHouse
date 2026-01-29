@@ -23,3 +23,4 @@ Tech House is a multi-page ecommerce prototype for a household appliances store.
 1. Open `index.html` in a modern browser.
 2. Navigate using the menu and category links.
 3. Use the cart and checkout to test the prototype behavior.
+# WebTechHouse
