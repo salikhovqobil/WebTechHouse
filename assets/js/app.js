@@ -16,6 +16,9 @@ const page = document.body.dataset.page || "";
 const basePath = document.body.dataset.base || "";
 const pageRoot = document.body.dataset.pageRoot || "";
 
+const STORAGE_USER_KEY = "techhouse_user";
+const STORAGE_COMMENTS_KEY = "techhouse_comments";
+
 const getQueryParam = (key) => {
     const params = new URLSearchParams(window.location.search);
     return params.get(key);
@@ -27,6 +30,257 @@ const getActiveCategory = () => {
         return null;
     }
     return categoryLookup[key] || null;
+};
+
+const getStoredUser = () => {
+    const raw = localStorage.getItem(STORAGE_USER_KEY);
+    if (!raw) {
+        return null;
+    }
+    try {
+        return JSON.parse(raw);
+    } catch (error) {
+        return null;
+    }
+};
+
+const setStoredUser = (user) => {
+    if (!user) {
+        localStorage.removeItem(STORAGE_USER_KEY);
+        return;
+    }
+    localStorage.setItem(STORAGE_USER_KEY, JSON.stringify(user));
+};
+
+const getStoredComments = () => {
+    const raw = localStorage.getItem(STORAGE_COMMENTS_KEY);
+    if (!raw) {
+        return {};
+    }
+    try {
+        return JSON.parse(raw);
+    } catch (error) {
+        return {};
+    }
+};
+
+const saveStoredComments = (data) => {
+    localStorage.setItem(STORAGE_COMMENTS_KEY, JSON.stringify(data));
+};
+
+const formatCommentDate = (dateValue) => {
+    const date = new Date(dateValue);
+    if (Number.isNaN(date.getTime())) {
+        return "";
+    }
+    const locale = getLanguage();
+    return date.toLocaleDateString(locale, {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    });
+};
+
+const renderComments = (listEl, emptyEl, comments) => {
+    if (!listEl) {
+        return;
+    }
+    listEl.innerHTML = "";
+
+    if (!comments.length) {
+        if (emptyEl) {
+            emptyEl.style.display = "block";
+            emptyEl.textContent = t("comments.empty");
+        }
+        return;
+    }
+
+    if (emptyEl) {
+        emptyEl.style.display = "none";
+    }
+
+    comments.forEach((comment) => {
+        const card = document.createElement("article");
+        card.className = "comment-card";
+
+        const meta = document.createElement("div");
+        meta.className = "comment-meta";
+
+        const author = document.createElement("span");
+        author.className = "comment-author";
+        author.textContent = comment.name || "User";
+
+        const date = document.createElement("span");
+        date.textContent = formatCommentDate(comment.date);
+
+        meta.appendChild(author);
+        meta.appendChild(date);
+
+        const text = document.createElement("p");
+        text.textContent = comment.text;
+
+        card.appendChild(meta);
+        card.appendChild(text);
+        listEl.appendChild(card);
+    });
+};
+
+const buildSampleComments = (product) => {
+    if (!product) {
+        return [];
+    }
+
+    const now = Date.now();
+    return [
+        {
+            id: `sample-${product.id}-1`,
+            name: t("comments.sample1.name"),
+            text: t("comments.sample1.text", { product: product.name }),
+            date: new Date(now - 2 * 86400000).toISOString()
+        },
+        {
+            id: `sample-${product.id}-2`,
+            name: t("comments.sample2.name"),
+            text: t("comments.sample2.text", { product: product.name }),
+            date: new Date(now - 5 * 86400000).toISOString()
+        },
+        {
+            id: `sample-${product.id}-3`,
+            name: t("comments.sample3.name"),
+            text: t("comments.sample3.text", { product: product.name }),
+            date: new Date(now - 9 * 86400000).toISOString()
+        }
+    ];
+};
+
+const initComments = (product) => {
+    const listEl = document.getElementById("commentList");
+    const emptyEl = document.getElementById("commentEmpty");
+    const form = document.getElementById("commentForm");
+    const textarea = document.getElementById("commentText");
+    const status = document.getElementById("commentStatus");
+    const authPrompt = document.getElementById("commentAuth");
+    const userLabel = document.getElementById("commentUser");
+    const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+    if (!listEl || !form || !textarea || !product) {
+        return;
+    }
+
+    const commentsData = getStoredComments();
+    const productKey = String(product.id);
+    let currentComments = Array.isArray(commentsData[productKey])
+        ? commentsData[productKey]
+        : [];
+    const sampleComments = buildSampleComments(product);
+
+    const getDisplayComments = () => [...currentComments, ...sampleComments];
+
+    const updateAuthState = () => {
+        const user = getStoredUser();
+        const isLoggedIn = Boolean(user);
+
+        textarea.disabled = !isLoggedIn;
+        if (submitBtn) {
+            submitBtn.disabled = !isLoggedIn;
+        }
+
+        if (authPrompt) {
+            authPrompt.style.display = isLoggedIn ? "none" : "block";
+        }
+
+        if (userLabel) {
+            if (isLoggedIn) {
+                userLabel.textContent = t("comments.userLabel", {
+                    name: user.name || user.identifier || "User"
+                });
+                userLabel.style.display = "block";
+            } else {
+                userLabel.style.display = "none";
+            }
+        }
+    };
+
+    updateAuthState();
+    renderComments(listEl, emptyEl, getDisplayComments());
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const user = getStoredUser();
+        if (!user) {
+            if (status) {
+                status.textContent = t("comments.status.loginRequired");
+            }
+            updateAuthState();
+            return;
+        }
+
+        const value = textarea.value.trim();
+        if (!value) {
+            if (status) {
+                status.textContent = t("comments.status.empty");
+            }
+            return;
+        }
+
+        const newComment = {
+            id: Date.now(),
+            name: user.name || user.identifier || "User",
+            text: value,
+            date: new Date().toISOString()
+        };
+
+        currentComments = [newComment, ...currentComments];
+        commentsData[productKey] = currentComments;
+        saveStoredComments(commentsData);
+
+        renderComments(listEl, emptyEl, getDisplayComments());
+        textarea.value = "";
+        if (status) {
+            status.textContent = t("comments.status.success");
+        }
+    });
+};
+
+const initNavToggle = () => {
+    const toggle = document.querySelector("[data-nav-toggle]");
+    const drawer = document.querySelector("[data-nav-drawer]");
+    if (!toggle || !drawer) {
+        return;
+    }
+
+    const setOpen = (isOpen) => {
+        drawer.classList.toggle("is-open", isOpen);
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    };
+
+    toggle.addEventListener("click", () => {
+        const isOpen = drawer.classList.contains("is-open");
+        setOpen(!isOpen);
+    });
+
+    drawer.addEventListener("click", (event) => {
+        const link = event.target.closest("a");
+        if (link) {
+            setOpen(false);
+        }
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!drawer.classList.contains("is-open")) {
+            return;
+        }
+        if (toggle.contains(event.target) || drawer.contains(event.target)) {
+            return;
+        }
+        setOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            setOpen(false);
+        }
+    });
 };
 
 const setupSearchInput = () => {
@@ -219,6 +473,7 @@ const initProductPage = () => {
     const product = products.find((item) => item.id === id) || products[0];
 
     renderProductDetails(product, { basePath, pageRoot });
+    initComments(product);
 
     const related = products
         .filter((item) => item.category === product.category && item.id !== product.id)
@@ -307,9 +562,65 @@ const initGlobalEvents = () => {
     });
 };
 
+const initAuthForms = () => {
+    const loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        const status = document.getElementById("loginStatus");
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const identifier = document.getElementById("signinEmail")?.value.trim();
+            const password = document.getElementById("signinPassword")?.value.trim();
+
+            if (!identifier || !password) {
+                if (status) {
+                    status.textContent = t("auth.status.fillFields");
+                }
+                return;
+            }
+
+            const name = identifier.includes("@") ? identifier.split("@")[0] : identifier;
+            setStoredUser({ name, identifier });
+            if (status) {
+                status.textContent = t("auth.status.loginSuccess");
+            }
+        });
+    }
+
+    const signupForm = document.getElementById("signupForm");
+    if (signupForm) {
+        const status = document.getElementById("signupStatus");
+        signupForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const name = document.getElementById("signupName")?.value.trim();
+            const email = document.getElementById("signupEmail")?.value.trim();
+            const phone = document.getElementById("signupPhone")?.value.trim();
+
+            if (!name || (!email && !phone)) {
+                if (status) {
+                    status.textContent = t("auth.status.fillFields");
+                }
+                return;
+            }
+
+            setStoredUser({
+                name,
+                email: email || null,
+                phone: phone || null,
+                identifier: email || phone
+            });
+
+            if (status) {
+                status.textContent = t("auth.status.signupSuccess");
+            }
+        });
+    }
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     applyTranslations(getLanguage());
     initLanguageSwitcher();
+    initNavToggle();
+    initAuthForms();
     updateCartCount(getCart());
     setupSearchInput();
     initGlobalEvents();

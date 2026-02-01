@@ -183,6 +183,112 @@
     gap: var(--space-5);
 }
 
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-5);
+}
+
+.membership-card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    border: 1px solid var(--border);
+    display: grid;
+    gap: var(--space-3);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.membership-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.membership-card.featured {
+    border-color: rgba(15, 118, 110, 0.35);
+    background: linear-gradient(140deg, #ffffff, #ecfeff);
+}
+
+.membership-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.membership-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--primary-600);
+    background: rgba(15, 118, 110, 0.12);
+    border: 1px solid rgba(15, 118, 110, 0.2);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.comments-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+.comment-list {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.comment-card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: var(--space-2);
+}
+
+.comment-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.comment-author {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.comment-form {
+    background: #fff;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: var(--space-3);
+}
+
+.comment-form textarea:disabled {
+    background: var(--surface);
+    color: var(--muted);
+}
+
+.comment-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
 .benefit-card {
     background: #fff;
     border-radius: var(--radius-md);
@@ -345,6 +451,34 @@
     border: 1px solid var(--border);
     padding: var(--space-6);
     box-shadow: var(--shadow-soft);
+}
+
+.auth-form {
+    background: #fff;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: var(--space-4);
+}
+
+.auth-card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    padding: var(--space-5);
+    display: grid;
+    gap: var(--space-3);
+    box-shadow: var(--shadow-soft);
+}
+
+.auth-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    flex-wrap: wrap;
 }
 
 .form-grid {

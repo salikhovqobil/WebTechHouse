@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title.cart">Savatcha - Tech House</title>
+    <title data-i18n="title.signup">Ro'yxatdan o'tish - Tech House</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
-<body data-page="cart" data-base="../" data-page-root="">
+<body data-page="signup" data-base="../" data-page-root="">
     <a class="skip-link" href="#main" data-i18n="skip.link">Asosiy qismga otish</a>
 
     <header class="header">
@@ -98,46 +98,62 @@
     <main id="main" class="main-content">
         <section class="page-hero reveal">
             <div class="container">
-                <p class="eyebrow" data-i18n="cart.hero.eyebrow">Savatcha</p>
-                <h1 data-i18n="cart.hero.title">Tanlangan mahsulotlar</h1>
-                <p data-i18n="cart.hero.subtitle">Savatchani tekshiring va buyurtmani yakunlang.</p>
+                <p class="eyebrow" data-i18n="auth.signup.eyebrow">Hisob</p>
+                <h1 data-i18n="auth.signup.title">Ro'yxatdan o'tish</h1>
+                <p data-i18n="auth.signup.subtitle">Yangi hisob yarating va barcha imkoniyatlardan foydalaning.</p>
             </div>
         </section>
 
-        <section class="cart-section">
-            <div class="container cart-layout">
-                <div>
-                    <div class="cart-header">
-                        <h2 data-i18n="cart.list.title">Mahsulotlar royxati</h2>
-                        <p class="muted" data-i18n="cart.list.subtitle">Miqdorni ozgartirib yangilang</p>
+        <section class="auth-section">
+            <div class="container auth-layout">
+                <form id="signupForm" class="auth-form" novalidate>
+                    <h2 data-i18n="auth.signup.formTitle">Yangi hisob</h2>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="signupName" data-i18n="auth.signup.nameLabel">Ism va familiya</label>
+                            <input type="text" id="signupName" name="signupName" placeholder="Ism Familiya" autocomplete="name" required data-i18n-placeholder="auth.signup.namePlaceholder">
+                        </div>
+                        <div class="form-field">
+                            <label for="signupEmail" data-i18n="auth.signup.emailLabel">Email</label>
+                            <input type="email" id="signupEmail" name="signupEmail" placeholder="you@example.com" autocomplete="email" required data-i18n-placeholder="auth.signup.emailPlaceholder">
+                        </div>
+                        <div class="form-field">
+                            <label for="signupPhone" data-i18n="auth.signup.phoneLabel">Telefon</label>
+                            <input type="tel" id="signupPhone" name="signupPhone" placeholder="+998 90 123 45 67" autocomplete="tel" required data-i18n-placeholder="auth.signup.phonePlaceholder">
+                        </div>
+                        <div class="form-field">
+                            <label for="signupPassword" data-i18n="auth.signup.passwordLabel">Parol</label>
+                            <input type="password" id="signupPassword" name="signupPassword" placeholder="Kamida 8 ta belgi" autocomplete="new-password" required data-i18n-placeholder="auth.signup.passwordPlaceholder">
+                        </div>
+                        <div class="form-field full">
+                            <label for="signupConfirm" data-i18n="auth.signup.confirmLabel">Parolni tasdiqlang</label>
+                            <input type="password" id="signupConfirm" name="signupConfirm" placeholder="Parolni qayta kiriting" autocomplete="new-password" required data-i18n-placeholder="auth.signup.confirmPlaceholder">
+                        </div>
                     </div>
-                    <div id="cartItems" class="cart-items"></div>
-                    <div id="cartEmpty" class="empty-state">
-                        <h3 data-i18n="cart.empty.title">Savatcha bosh</h3>
-                        <p data-i18n="cart.empty.text">Katalogdan mahsulot tanlab savatchaga qoshing.</p>
-                        <a href="categories.html" class="btn btn-primary" data-i18n="buttons.goCatalog">Katalogga otish</a>
+                    <div class="form-actions">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            <span data-i18n="auth.signup.terms">Foydalanish shartlariga roziman</span>
+                        </label>
+                        <button type="submit" class="btn btn-primary" data-i18n="auth.signup.button">Ro'yxatdan o'tish</button>
+                        <p id="signupStatus" class="form-status" aria-live="polite"></p>
+                        <p class="muted" data-i18n="auth.signup.note">Forma prototip uchun. Hisob yaratilmaydi.</p>
+                        <p class="muted">
+                            <span data-i18n="auth.signup.haveAccount">Hisobingiz bormi?</span>
+                            <a href="login.html" data-i18n="auth.signup.signinLink">Kirish</a>
+                        </p>
                     </div>
+                </form>
+                <div class="auth-card">
+                    <h3 data-i18n="auth.signup.cardTitle">Tech House hisobiga ega bo'ling</h3>
+                    <p class="muted" data-i18n="auth.signup.cardText">Aksiya va yangi kelgan mahsulotlar haqida birinchi bo'lib bilib oling.</p>
+                    <ul class="specs-list">
+                        <li data-i18n="auth.signup.benefit1">Yangi aksiya xabarlari</li>
+                        <li data-i18n="auth.signup.benefit2">Saqlangan manzillar</li>
+                        <li data-i18n="auth.signup.benefit3">24/7 qo'llab-quvvatlash</li>
+                    </ul>
+                    <a href="login.html" class="btn btn-outline" data-i18n="auth.signup.cardCta">Kirish</a>
                 </div>
-                <aside class="order-summary">
-                    <h3 data-i18n="cart.summary.title">Buyurtma xulosasi</h3>
-                    <div class="summary-line">
-                        <span data-i18n="cart.summary.subtotal">Subtotal</span>
-                        <span id="summarySubtotal">0 so'm</span>
-                    </div>
-                    <div class="summary-line">
-                        <span data-i18n="cart.summary.shipping">Yetkazib berish</span>
-                        <span id="summaryShipping">0 so'm</span>
-                    </div>
-                    <div class="summary-line">
-                        <span data-i18n="cart.summary.discount">Chegirma</span>
-                        <span id="summaryDiscount">0 so'm</span>
-                    </div>
-                    <div class="summary-line total">
-                        <span data-i18n="cart.summary.total">Jami</span>
-                        <span id="summaryTotal">0 so'm</span>
-                    </div>
-                    <a href="checkout.html" class="btn btn-primary" data-i18n="buttons.checkout">Checkout</a>
-                </aside>
             </div>
         </section>
     </main>

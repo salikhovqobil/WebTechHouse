@@ -35,6 +35,10 @@
                         <button type="button" class="lang-btn" data-lang="ru">RU</button>
                         <button type="button" class="lang-btn" data-lang="en">EN</button>
                     </div>
+                    <div class="auth-actions">
+                        <a href="login.html" class="btn btn-outline" data-i18n="nav.signin">Kirish</a>
+                        <a href="signup.html" class="btn btn-primary" data-i18n="nav.signup">Ro'yxatdan o'tish</a>
+                    </div>
                     <a href="contact.html" class="icon-link">
                         <img class="icon" src="../assets/img/icons/phone.svg" alt="" aria-hidden="true">
                         <span data-i18n="nav.contact">Kontakt</span>
@@ -49,16 +53,45 @@
     </header>
 
     <nav class="navbar">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="../index.html" data-i18n="nav.home">Bosh sahifa</a></li>
-                <li><a href="categories.html?cat=Kitchen" data-i18n="nav.kitchen">Oshxona</a></li>
-                <li><a href="categories.html?cat=Cleaning" data-i18n="nav.cleaning">Tozalash</a></li>
-                <li><a href="categories.html?cat=Climate" data-i18n="nav.climate">Iqlim</a></li>
-                <li><a href="categories.html?cat=TV" data-i18n="nav.tv">TV &amp; Audio</a></li>
-                <li><a href="categories.html?cat=Computers" data-i18n="nav.computers">Kompyuter</a></li>
-                <li><a href="categories.html?cat=Appliances" data-i18n="nav.appliances">Kichik qurilmalar</a></li>
-            </ul>
+        <div class="container nav-bar">
+            <div class="nav-bar-left">
+                <a href="../index.html" class="nav-home" data-i18n="nav.home">Bosh sahifa</a>
+                <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="navDrawer">
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                    <span data-i18n="nav.categories">Kategoriyalar</span>
+                </button>
+            </div>
+            <div class="nav-bar-right">
+                <a href="contact.html" class="nav-badge">
+                    <img class="icon" src="../assets/img/icons/phone.svg" alt="" aria-hidden="true">
+                    <span data-i18n="nav.quick.phone">+998 71 123 45 67</span>
+                </a>
+                <span class="nav-badge">
+                    <img class="icon" src="../assets/img/icons/location.svg" alt="" aria-hidden="true">
+                    <span data-i18n="nav.quick.location">Toshkent</span>
+                </span>
+                <span class="nav-badge nav-badge-accent" data-i18n="nav.quick.discount">Chegirma 15%</span>
+            </div>
+            <div class="nav-drawer" id="navDrawer" data-nav-drawer>
+                <div class="nav-drawer-grid">
+                    <div class="nav-group">
+                        <p class="nav-group-title" data-i18n="nav.group.home">Uy va oshxona</p>
+                        <ul class="nav-group-list">
+                            <li><a href="categories.html?cat=Kitchen" data-i18n="nav.kitchen">Oshxona</a></li>
+                            <li><a href="categories.html?cat=Cleaning" data-i18n="nav.cleaning">Tozalash</a></li>
+                            <li><a href="categories.html?cat=Climate" data-i18n="nav.climate">Iqlim</a></li>
+                            <li><a href="categories.html?cat=Appliances" data-i18n="nav.appliances">Kichik qurilmalar</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <p class="nav-group-title" data-i18n="nav.group.tech">Elektronika</p>
+                        <ul class="nav-group-list">
+                            <li><a href="categories.html?cat=TV" data-i18n="nav.tv">TV &amp; Audio</a></li>
+                            <li><a href="categories.html?cat=Computers" data-i18n="nav.computers">Kompyuter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 

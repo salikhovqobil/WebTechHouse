@@ -24,3 +24,4 @@ Tech House is a multi-page ecommerce prototype for a household appliances store.
 2. Navigate using the menu and category links.
 3. Use the cart and checkout to test the prototype behavior.
 # WebTechHouse
+# WebTechHouse1

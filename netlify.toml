@@ -1,4 +1,3 @@
 [build]
-# base = "web"  ← Buni olib tashlang yoki izohga oling
 publish = "."
 command = ""

@@ -35,6 +35,10 @@
                         <button type="button" class="lang-btn" data-lang="ru">RU</button>
                         <button type="button" class="lang-btn" data-lang="en">EN</button>
                     </div>
+                    <div class="auth-actions">
+                        <a href="pages/login.html" class="btn btn-outline" data-i18n="nav.signin">Kirish</a>
+                        <a href="pages/signup.html" class="btn btn-primary" data-i18n="nav.signup">Ro'yxatdan o'tish</a>
+                    </div>
                     <a href="pages/contact.html" class="icon-link">
                         <img class="icon" src="assets/img/icons/phone.svg" alt="" aria-hidden="true">
                         <span data-i18n="nav.contact">Kontakt</span>
@@ -49,16 +53,45 @@
     </header>
 
     <nav class="navbar">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active" data-i18n="nav.home">Bosh sahifa</a></li>
-                <li><a href="pages/categories.html?cat=Kitchen" data-i18n="nav.kitchen">Oshxona</a></li>
-                <li><a href="pages/categories.html?cat=Cleaning" data-i18n="nav.cleaning">Tozalash</a></li>
-                <li><a href="pages/categories.html?cat=Climate" data-i18n="nav.climate">Iqlim</a></li>
-                <li><a href="pages/categories.html?cat=TV" data-i18n="nav.tv">TV &amp; Audio</a></li>
-                <li><a href="pages/categories.html?cat=Computers" data-i18n="nav.computers">Kompyuter</a></li>
-                <li><a href="pages/categories.html?cat=Appliances" data-i18n="nav.appliances">Kichik qurilmalar</a></li>
-            </ul>
+        <div class="container nav-bar">
+            <div class="nav-bar-left">
+                <a href="index.html" class="nav-home active" data-i18n="nav.home">Bosh sahifa</a>
+                <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="navDrawer">
+                    <span class="nav-toggle-icon" aria-hidden="true"></span>
+                    <span data-i18n="nav.categories">Kategoriyalar</span>
+                </button>
+            </div>
+            <div class="nav-bar-right">
+                <a href="pages/contact.html" class="nav-badge">
+                    <img class="icon" src="assets/img/icons/phone.svg" alt="" aria-hidden="true">
+                    <span data-i18n="nav.quick.phone">+998 71 123 45 67</span>
+                </a>
+                <span class="nav-badge">
+                    <img class="icon" src="assets/img/icons/location.svg" alt="" aria-hidden="true">
+                    <span data-i18n="nav.quick.location">Toshkent</span>
+                </span>
+                <span class="nav-badge nav-badge-accent" data-i18n="nav.quick.discount">Chegirma 15%</span>
+            </div>
+            <div class="nav-drawer" id="navDrawer" data-nav-drawer>
+                <div class="nav-drawer-grid">
+                    <div class="nav-group">
+                        <p class="nav-group-title" data-i18n="nav.group.home">Uy va oshxona</p>
+                        <ul class="nav-group-list">
+                            <li><a href="pages/categories.html?cat=Kitchen" data-i18n="nav.kitchen">Oshxona</a></li>
+                            <li><a href="pages/categories.html?cat=Cleaning" data-i18n="nav.cleaning">Tozalash</a></li>
+                            <li><a href="pages/categories.html?cat=Climate" data-i18n="nav.climate">Iqlim</a></li>
+                            <li><a href="pages/categories.html?cat=Appliances" data-i18n="nav.appliances">Kichik qurilmalar</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <p class="nav-group-title" data-i18n="nav.group.tech">Elektronika</p>
+                        <ul class="nav-group-list">
+                            <li><a href="pages/categories.html?cat=TV" data-i18n="nav.tv">TV &amp; Audio</a></li>
+                            <li><a href="pages/categories.html?cat=Computers" data-i18n="nav.computers">Kompyuter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -188,6 +221,50 @@
                         <a href="pages/contact.html" class="btn btn-outline" data-i18n="buttons.contact">Boglanish</a>
                     </div>
                     <img class="promo-media" src="assets/img/banners/promo-delivery.svg" alt="Yetkazib berish promo banneri">
+                </div>
+            </div>
+        </section>
+
+        <section class="membership-section reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="home.membership.title">Taklif qilinadigan paketlar</h2>
+                    <p data-i18n="home.membership.subtitle">Sodiqlik va biznes uchun maxsus yechimlar</p>
+                </div>
+                <div class="membership-grid">
+                    <article class="membership-card">
+                        <h3 data-i18n="membership.bronze.title">Bronza A'zolik</h3>
+                        <ul class="specs-list">
+                            <li data-i18n="membership.bronze.item1">Asosiy sodiqlik ballari</li>
+                            <li data-i18n="membership.bronze.item2">Tanlangan chegirmalarga kirish</li>
+                        </ul>
+                    </article>
+                    <article class="membership-card">
+                        <h3 data-i18n="membership.silver.title">Kumush A'zolik</h3>
+                        <ul class="specs-list">
+                            <li data-i18n="membership.silver.item1">Ko'proq sodiqlik ballari</li>
+                            <li data-i18n="membership.silver.item2">Ustuvor mijozlarni qo'llab-quvvatlash</li>
+                            <li data-i18n="membership.silver.item3">Oylik maxsus takliflar</li>
+                        </ul>
+                    </article>
+                    <article class="membership-card featured">
+                        <div class="membership-top">
+                            <h3 data-i18n="membership.gold.title">Oltin A'zolik</h3>
+                            <span class="membership-badge" data-i18n="membership.featured">Tavsiya</span>
+                        </div>
+                        <ul class="specs-list">
+                            <li data-i18n="membership.gold.item1">Eng yuqori sodiqlik mukofotlari</li>
+                            <li data-i18n="membership.gold.item2">Bepul yetkazib berish</li>
+                            <li data-i18n="membership.gold.item3">Yangi mahsulotlarga erta kirish imkoniyati</li>
+                        </ul>
+                    </article>
+                    <article class="membership-card">
+                        <h3 data-i18n="membership.business.title">Biznes / Ulgurji Paketlar</h3>
+                        <ul class="specs-list">
+                            <li data-i18n="membership.business.item1">Katta hajmda sotib olish imkoniyati</li>
+                            <li data-i18n="membership.business.item2">Korxonalar uchun individual narxlar</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
